@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: Config
+metadata:
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapRoles: "- rolearn: arn:aws:iam::878459429849:role/terraform-eks-porch-node\n\
+    \  username: system:node:{{EC2PrivateDNSName}}\n  groups:\n    - system:bootstrappers\n\
+    \    - system:nodes\n"
+kubeconfig = apiVersion: v1
+clusters:
+- cluster:
+    server: https://6826B0A2293C809CEF33DC17B447A9A9.yl4.eu-west-1.eks.amazonaws.com
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRFNU1ETXhOekUxTXpBek4xb1hEVEk1TURNeE5ERTFNekF6TjFvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBS2tUCjZEdFRra2U0ZGo1RWIzZVlHekFpbUhUaHhxSk9XZU5UNDhzdkFqZ3FiNnlrT2gwNXR0Rk9hSlFVTS8xWGJaMkgKOGZ2d096VW05K29tVEJReVRQV2FaL3J3Q2piK3JqdUFyMGxycHdGS2RmblpsaldlVEhuSC9zelVzYlFvTUJ4cApOVXptVGFDei9EOGVVYjVOWm03aDUwK1BQRCtla0kyQW1zQklCWE9KSGYvNHFwMnNhRVhaaVdCQlhFSEZLaWdwCjJLaTV4RHdjN3Rkei8rMmZyTjlrM0IxUTdQNWpHVDdYakx5b3pSaW5ZUTRrMHNFV01mR1pIUk1uREtiNnNmZmsKR0xuMXZWOVFPRVZTTXBLR3NOSDRnc3Y0TlJJR1J0RDJ5dVZaOHVETGI2dGxvTjdSN2daUTFvRStFUXZGZnNhbwpFdHlhR3FBaWI3VmMrNGx1NHFrQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFEUThXTmN5ejExanBSNWNjV2xMQzdoZ1BwM0gKSUIwamkzUU8yUGU0MS9yMzhDZ1JaejdSKzV2alBFM0NOZUEwT2VmNHhrK21hb2hDUGUyWVZldllsU2crZnRIYgpub0M5UEtCTFJZZVhEcHcreUlTZXVicTEvWk9qRlVYbTcvdnp4MVV5djEvdzA5MC9MY054Y1pFalg3b05qVzR3CkpCOFV3UEtRZHFrYS9QcXp4aFdzMENyODY1dE9OcjE4Q1JrMkRrbjA5WS9SenN2NVozQ3IzbEZ5TVF6bWJxR2wKZWdIcnRuNnhBOFEveWdTVk1aNTA2cDgyc0tTOTJreDhYZEliYjNFU3F2S2xMT2l1OHBBZnJHNnBNMUJrRXZjNwp2aUxkU0dMTVF1SzhmS1NDdXA5c3ZyT2pnQW9LS1JpaXVMc1B5dm5hQ01KVXpKVGVTZFlBOUdEbm9SND0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+  name: kubernetes
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRFNU1ETXhOekUxTXpBek4xb1hEVEk1TURNeE5ERTFNekF6TjFvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBS2tUCjZEdFRra2U0ZGo1RWIzZVlHekFpbUhUaHhxSk9XZU5UNDhzdkFqZ3FiNnlrT2gwNXR0Rk9hSlFVTS8xWGJaMkgKOGZ2d096VW05K29tVEJReVRQV2FaL3J3Q2piK3JqdUFyMGxycHdGS2RmblpsaldlVEhuSC9zelVzYlFvTUJ4cApOVXptVGFDei9EOGVVYjVOWm03aDUwK1BQRCtla0kyQW1zQklCWE9KSGYvNHFwMnNhRVhaaVdCQlhFSEZLaWdwCjJLaTV4RHdjN3Rkei8rMmZyTjlrM0IxUTdQNWpHVDdYakx5b3pSaW5ZUTRrMHNFV01mR1pIUk1uREtiNnNmZmsKR0xuMXZWOVFPRVZTTXBLR3NOSDRnc3Y0TlJJR1J0RDJ5dVZaOHVETGI2dGxvTjdSN2daUTFvRStFUXZGZnNhbwpFdHlhR3FBaWI3VmMrNGx1NHFrQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFEUThXTmN5ejExanBSNWNjV2xMQzdoZ1BwM0gKSUIwamkzUU8yUGU0MS9yMzhDZ1JaejdSKzV2alBFM0NOZUEwT2VmNHhrK21hb2hDUGUyWVZldllsU2crZnRIYgpub0M5UEtCTFJZZVhEcHcreUlTZXVicTEvWk9qRlVYbTcvdnp4MVV5djEvdzA5MC9MY054Y1pFalg3b05qVzR3CkpCOFV3UEtRZHFrYS9QcXp4aFdzMENyODY1dE9OcjE4Q1JrMkRrbjA5WS9SenN2NVozQ3IzbEZ5TVF6bWJxR2wKZWdIcnRuNnhBOFEveWdTVk1aNTA2cDgyc0tTOTJreDhYZEliYjNFU3F2S2xMT2l1OHBBZnJHNnBNMUJrRXZjNwp2aUxkU0dMTVF1SzhmS1NDdXA5c3ZyT2pnQW9LS1JpaXVMc1B5dm5hQ01KVXpKVGVTZFlBOUdEbm9SND0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://6826B0A2293C809CEF33DC17B447A9A9.yl4.eu-west-1.eks.amazonaws.com
+  name: arn:aws:eks:eu-west-1:878459429849:cluster/porchgeese
+contexts:
+- context:
+    cluster: kubernetes
+    user: aws
+  name: aws
+- context:
+    cluster: arn:aws:eks:eu-west-1:878459429849:cluster/porchgeese
+    user: arn:aws:eks:eu-west-1:878459429849:cluster/porchgeese
+  name: arn:aws:eks:eu-west-1:878459429849:cluster/porchgeese
+current-context: arn:aws:eks:eu-west-1:878459429849:cluster/porchgeese
+preferences: {}
+users:
+- name: aws
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      command: aws-iam-authenticator
+      args:
+      - token
+      - -i
+      - porchgeese
+      - -r
+      - ''
+- name: arn:aws:eks:eu-west-1:878459429849:cluster/porchgeese
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - token
+      - -i
+      - porchgeese
+      command: aws-iam-authenticator
+      env:
+      - name: AWS_PROFILE
+        value: personal
